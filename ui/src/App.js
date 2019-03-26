@@ -1,6 +1,11 @@
+// OLD
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import 'bootstrap/dist/css/bootstrap.css';
-import './app.css';
+import './App.css';
+
+import Routes from './Routes';
 import Login from './components/Login';
 
 class App extends Component {
@@ -10,6 +15,7 @@ class App extends Component {
     this.state = {
       visibility: true
     };
+
     this.toggleVisibility = this.toggleVisibility.bind(this);
   }
 
@@ -28,14 +34,28 @@ class App extends Component {
     }
 
     return (
-      <div className='app'>
-        <small
-          className='app-login-link font-weight-light'
-          onClick={this.toggleVisibility}
-        >
-          Login
-        </small>
-        <header className='app-header'>{landing}</header>
+      <div className='App'>
+        <div className='d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm'>
+          <Link to='/' className='my-0 mr-md-auto font-weight-normal'>
+            SVALINN
+          </Link>
+          <nav className='my-2 my-md-0 mr-md-3'>
+            <Link className='p-2 text-dark' to='/home'>
+              Home
+            </Link>
+            <a className='p-2 text-dark' href='#'>
+              Enterprise
+            </a>
+            <a className='p-2 text-dark' href='#'>
+              Support
+            </a>
+            <a className='p-2 text-dark' href='#'>
+              Pricing
+            </a>
+          </nav>
+          <Link to='/login'>Login</Link>
+        </div>
+        <Routes />
       </div>
     );
   }
