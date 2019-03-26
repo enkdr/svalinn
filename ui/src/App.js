@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 import Routes from './Routes';
-import Login from './components/Login';
+import Login from './containers/Login';
 
 class App extends Component {
   constructor(props) {
